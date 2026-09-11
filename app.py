@@ -170,7 +170,7 @@ with st.sidebar:
         label_visibility="collapsed",
     )
     st.markdown("---")
-    st.caption("Tugas Big Data LAS — Minggu 5")
+  
 
 
 # ============================================================

@@ -76,6 +76,9 @@ div[role="radiogroup"] label {
     border-radius: 4px; padding: 0.55rem 1.4rem; font-weight: 500;
 }
 .stButton>button:hover { background: var(--forest-dark); color: #FFFFFF; }
+.stButton>button p, .stButton>button span, .stButton>button div {
+    color: #FFFFFF !important;
+}
 
 [data-testid="stFileUploaderDropzone"] {
     background: var(--panel); border: 1.5px dashed var(--line); border-radius: 6px;
@@ -193,11 +196,22 @@ if page == "Sortir Gambar":
         help="Gunakan foto satu buah dengan latar belakang polos untuk hasil terbaik.",
     )
 
-    if uploaded_file is not None:
-        image = Image.open(uploaded_file)
+    if uploaded_file is None:
+        camera_file = st.camera_input(
+            "Atau ambil foto langsung dari kamera",
+            help="Pastikan buah terlihat jelas dan pencahayaan cukup.",
+        )
+    else:
+        camera_file = None
+
+    input_file = uploaded_file or camera_file
+
+    if input_file is not None:
+        image = Image.open(input_file)
+        image_name = getattr(input_file, "name", None) or f"kamera_{int(time.time())}.jpg"
         st.session_state.current_image = image
-        st.session_state.current_name = uploaded_file.name
-        st.image(image, caption=f"Gambar: {uploaded_file.name}", width=320)
+        st.session_state.current_name = image_name
+        st.image(image, caption=f"Gambar: {image_name}", width=320)
 
         if st.button("Klasifikasikan"):
             with st.spinner("Memproses gambar..."):

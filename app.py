@@ -34,7 +34,7 @@ VERSION_HISTORY = [
     },
 ]
 
-st.set_page_config(page_title="Stasiun Sortir Apel & Jeruk", page_icon="🧺", layout="wide")
+st.set_page_config(page_title="Apple vs Orange Classifier", page_icon="🍎", layout="wide")
 
 # ============================================================
 # GAYA (CSS)

@@ -162,7 +162,7 @@ if "current_name" not in st.session_state:
 # SIDEBAR — NAVIGASI
 # ============================================================
 with st.sidebar:
-    st.markdown("### 🧺 Stasiun Sortir")
+    st.markdown("### 🍎 Apple vs Orange Classifier")
     st.caption("Klasifikasi Apel vs Jeruk")
     page = st.radio(
         "Navigasi",

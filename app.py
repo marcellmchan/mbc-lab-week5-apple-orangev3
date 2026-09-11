@@ -27,18 +27,12 @@ VERSION_HISTORY = [
                       "pencatatan riwayat prediksi selama sesi berjalan.",
     },
     {
-        "versi": "v3 — Minggu 5",
+        "versi": "v3 — Final (Minggu 5)",
         "perubahan": "Desain ulang antarmuka penuh, navigasi multi-halaman, fitur Uji "
                       "Performa yang membandingkan ukuran berkas dan kecepatan inferensi "
-                      "kedua model secara langsung, serta petunjuk pemakaian dan label "
-                      "bantuan untuk pengguna baru.",
-    },
-    {
-        "versi": "v4 — Final (Minggu 5)",
-        "perubahan": "Menambahkan opsi ambil foto langsung dari kamera sebagai alternatif "
-                      "unggah berkas, peringatan otomatis saat tingkat keyakinan rendah, "
-                      "dan laporan hasil klasifikasi & uji performa yang bisa diunduh "
-                      "sebagai berkas teks.",
+                      "kedua model secara langsung, opsi ambil foto dari kamera, peringatan "
+                      "otomatis saat tingkat keyakinan rendah, dan laporan hasil klasifikasi "
+                      "& uji performa yang bisa diunduh sebagai berkas teks.",
     },
 ]
 

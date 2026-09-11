@@ -17,17 +17,17 @@ LOW_CONF_THRESHOLD = 0.60
 
 VERSION_HISTORY = [
     {
-        "versi": "v1 — Minggu 2",
+        "versi": "v1",
         "perubahan": "Model dasar klasifikasi Apel vs Jeruk memakai transfer learning "
                      "MobileNetV2. Antarmuka satu halaman: unggah gambar, lihat hasil.",
     },
     {
-        "versi": "v2 — Minggu 3–4",
+        "versi": "v2",
         "perubahan": "Menambahkan model teroptimasi (TFLite hasil quantization) sebagai "
                      "pilihan selain model asli, breakdown probabilitas tiap kelas.",
     },
     {
-        "versi": "v3 — Final (Minggu 5)",
+        "versi": "v3",
         "perubahan": "Desain ulang antarmuka, navigasi multi-halaman, dan fitur Uji "
                      "Performa yang membandingkan ukuran berkas & kecepatan inferensi "
                      "kedua model secara langsung.",

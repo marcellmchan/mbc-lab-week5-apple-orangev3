@@ -55,17 +55,21 @@ h1, h2, h3 { font-family: 'Bitter', serif; color: var(--ink); }
 p, span, label, .stMarkdown { font-family: 'IBM Plex Sans', sans-serif; color: var(--ink); }
 footer { visibility: hidden; }
 
-/* Sidebar: latar gelap, semua teks terang, radio dot ikut warna terang */
-[data-testid="stSidebar"] { background: var(--forest); }
-[data-testid="stSidebar"] * { color: #EFF3EA !important; }
-[data-testid="stSidebar"] input[type="radio"] { accent-color: #EFF3EA; }
-
-/* Radio di halaman utama (latar terang): dot pakai warna tema, bukan merah default */
-.main input[type="radio"] { accent-color: var(--forest); }
+/* Radio di halaman utama (latar terang): pill putih, dot pakai warna tema */
 div[role="radiogroup"] label {
     background: var(--panel); border: 1px solid var(--line);
     border-radius: 4px; padding: 0.3rem 0.8rem; margin-right: 0.4rem;
 }
+.main input[type="radio"] { accent-color: var(--forest); }
+
+/* Sidebar: latar gelap, teks terang. Pill putih DIHAPUS di sini supaya tidak
+   jadi teks putih di atas kotak putih (bug kontras) - dibuat transparan saja. */
+[data-testid="stSidebar"] { background: var(--forest); }
+[data-testid="stSidebar"] * { color: #EFF3EA !important; }
+[data-testid="stSidebar"] div[role="radiogroup"] label {
+    background: transparent; border: none; padding: 0.4rem 0; margin-right: 0;
+}
+[data-testid="stSidebar"] input[type="radio"] { accent-color: #EFF3EA; }
 
 .stButton>button {
     background: var(--forest); color: #FFFFFF; border: none;

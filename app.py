@@ -163,7 +163,7 @@ if "current_name" not in st.session_state:
 # ============================================================
 with st.sidebar:
     st.markdown("### 🍎 Apple vs Orange Classifier")
-    st.caption("Klasifikasi Apel vs Jeruk")
+    st.caption("managed by marcellmchan")
     page = st.radio(
         "Navigasi",
         ["Sortir Gambar", "Uji Performa Model", "Tentang & Versi"],

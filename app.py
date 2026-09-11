@@ -37,7 +37,7 @@ VERSION_HISTORY = [
 st.set_page_config(page_title="Stasiun Sortir Apel & Jeruk", page_icon="🧺", layout="wide")
 
 # ============================================================
-# GAYA (CSS) — disederhanakan, kontras diperbaiki lewat accent-color
+# GAYA (CSS)
 # ============================================================
 st.markdown("""
 <style>
@@ -62,14 +62,23 @@ div[role="radiogroup"] label {
 }
 .main input[type="radio"] { accent-color: var(--forest); }
 
-/* Sidebar: latar gelap, teks terang. Pill putih DIHAPUS di sini supaya tidak
-   jadi teks putih di atas kotak putih (bug kontras) - dibuat transparan saja. */
+/* Sidebar: latar gelap, teks terang, tanpa pill putih (hindari teks putih di atas putih) */
 [data-testid="stSidebar"] { background: var(--forest); }
 [data-testid="stSidebar"] * { color: #EFF3EA !important; }
 [data-testid="stSidebar"] div[role="radiogroup"] label {
     background: transparent; border: none; padding: 0.4rem 0; margin-right: 0;
 }
-[data-testid="stSidebar"] input[type="radio"] { accent-color: #EFF3EA; }
+[data-testid="stSidebar"] input[type="radio"] {
+    accent-color: #EFF3EA; width: 16px; height: 16px;
+}
+/* Halaman non-aktif dibuat redup, halaman aktif tebal & terang penuh -
+   supaya beda status kelihatan jelas tanpa mengandalkan titik radio saja */
+[data-testid="stSidebar"] div[role="radiogroup"] label p {
+    color: #B9C4AF !important; font-weight: 400;
+}
+[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) p {
+    color: #FFFFFF !important; font-weight: 700;
+}
 
 .stButton>button {
     background: var(--forest); color: #FFFFFF; border: none;
@@ -170,7 +179,6 @@ with st.sidebar:
         label_visibility="collapsed",
     )
     st.markdown("---")
-  
 
 
 # ============================================================
